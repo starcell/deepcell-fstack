@@ -5,10 +5,10 @@ deepcell stack은
 
 ## 구성
 H/W : Intel CPU(Xeon, Core i series) 장착 컴퓨터(서버, 데스크탑, 노트북, 미니피씨)
+
 OS : Ubuntu 18.04 LTS(Bionic Beaver) - Desktop
 
 Utils
-* docker
 * git
 * wget
 * curl
@@ -16,6 +16,11 @@ Utils
 * emacs
 * tmux
 * htop
+
+Container Engine : docker
+
+Internet Browser : Chrome
+
 
 # 사용법
 
@@ -38,4 +43,9 @@ OS 설치 : Ubuntu 18.04 LTS Desktop을 설치
 
 설치  
   cd deepcell-stack-cpu  
-  ./install_deepcell-stack.sh cpu
+  ./install.sh cpu
+
+## 딥셀 컨테이너 사용
+
+딥셀 스텍 실행 
+  ./run_deepcell.sh
