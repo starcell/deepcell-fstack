@@ -1,0 +1,30 @@
+#
+# softwares are required by deepcell stack
+#
+apt-transport-https
+ca-certificates
+gnupg-agent
+software-properties-common
+
+# Tools
+git
+
+geany  # Text editor
+vim  # Text editor
+emacs  # Text editor
+tmux  # Text editor
+htop  # Performence viewer
+google-chrome-stable  # Internet Browser
+httpie  # HTTP client
+curl
+wget
+
+# Interpreters
+python3
+racket
+
+docker-ce
+docker-ce-cli
+containerd.io
+
+    # It's okay for comments to be preceeded by whitespace.
