@@ -36,6 +36,6 @@ OS 설치 : Ubuntu 18.04 LTS Desktop을 설치
 다운로드
   git clone https://github.com/starcell/deepcell-stack-cpu
 
-설치
+설치  
   cd deepcell-stack-cpu  
   ./install_deepcell-stack.sh cpu
