@@ -1,31 +1,18 @@
 #!/usr/bin/env bash
 
-### for ubuntu 18.04
+### install deepcell stack for ubuntu 18.04
 
-## 1. library install
 sudo apt upate
 
-sudo apt-get install -y \
-apt-transport-https \
-ca-certificates \
-curl \
-gnupg-agent \
-software-properties-common
-
-## 2. chrome browser install
-# 인증키 등록
+# chrome browser 설치를 위한 인증키 등록
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
 # 크롬 PPA(Personal Package Archive) 추가
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+sudo apt update
+# sudo apt-get install google-chrome-stable # in requrements.txt에 포함
 
-# 추가한 크롬 PPA 삭제
-sudo rm -rf /etc/apt/sources.list.d/google.list
-sudo apt-get clean
-
-## 3. docker install
+## docker install 준비
 #<https://docs.docker.com/engine/install/ubuntu/>
 
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -33,5 +20,14 @@ sudo add-apt-repository \
 "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) \
 stable"
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt update
+
+# apt install로 requrements.txt에 있는 소프트웨어들을 설치
+# https://www.monolune.com/installing-apt-packages-from-a-requirements-file/
+
+sudo sed 's/#.*//' requirements.txt | xargs sudo apt install -y 
+sudo apt update
+
+# 추가한 크롬 PPA 삭제
+sudo rm -rf /etc/apt/sources.list.d/google.list
+sudo apt clean
