@@ -1,16 +1,10 @@
-
-## [deepcellstack_install.sh]
 ## sudo free pass
-echo "sudo free pass............................"
-sleep 2
-
 sudo echo "deepcell ALL=(ALL) NOPASSWD:ALL" > ./deepcell
 sudo cp ./deepcell /etc/sudoers.d/deepcell
 sudo chmod 0440 /etc/sudoers.d/deepcell
 
 ## library install
-echo "library install............................"
-sleep 2
+sleep 1
 
 sudo apt upate
 sudo apt-get install -y \
@@ -24,8 +18,7 @@ software-properties-common
 
 
 ## chrome install
-echo "chrome install............................"
-sleep 2
+sleep 1
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
@@ -36,12 +29,8 @@ sudo apt-get install -y google-chrome-stable
 sudo rm -rf /etc/apt/sources.list.d/google.list
 sudo apt-get clean
 
-
-
-
 ## docker install
-echo "docker install............................"
-sleep 2
+sleep 1
 
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
