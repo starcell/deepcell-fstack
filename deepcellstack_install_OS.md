@@ -36,17 +36,17 @@ Link : https://releases.ubuntu.com/bionic/
 “ubuntu-18.04.4-desktop-amd64.iso" 다운로드 합니다.  
 
 
-  Step 3. OS설치 미디어 준비 및 제작 - (USB stick)
-Ubuntu 18.04 LTS 설치하기 위해 USB 혹은 DVD 미디어가 필요합니다.
+## Step 3. OS설치 미디어 준비 및 제작 - (USB stick)
+Ubuntu 18.04 LTS 설치하기 위해 USB 혹은 DVD 미디어가 필요합니다.  
 여기서는 Windows 환경에서 설치용 USB stick으로 진행합니다.
 
 (DVD미디어 사용은 https://help.ubuntu.com/community/BurningIsoHowto 참조하세요.)
 
-- 용량 8GB 이상의 USB 메모리 준비.
-- 다운로드받은 ISO 설치파일을 USB에 담기 
+* 용량 8GB 이상의 USB 메모리 준비.
+* 다운로드받은 ISO 설치파일을 USB에 담기  
 (상세내용은 아래 Link를 참조합니다.)
- https://rufus.ie
-- 설치할 서버 혹은 PC의 부팅순서를 "USB BOOT" 모드를 첫번째로 변경합니다.
+https://rufus.ie
+* 설치할 서버 혹은 PC의 부팅순서를 "USB BOOT" 모드를 첫번째로 변경합니다.
 
 
 Step 4. Ubuntu 18.04 LTS 설치
