@@ -23,17 +23,17 @@ Starcell, all right reserved
 
 
 ## Step 1. 설치 요구사양
-- 2 GHz 이상의 듀얼코어 프로세서
-- 2 GB 이상의 시스템 메모리
-- 25 GB 이상의 저장공간
-- DVD 또는 USB 설치미디어
-- 기타 소프트웨어 및 업데이트를 위한 인터넷 연결(선택)
+* 2 GHz 이상의 듀얼코어 프로세서
+* 2 GB 이상의 시스템 메모리
+* 25 GB 이상의 저장공간
+* DVD 또는 USB 설치미디어
+* 기타 소프트웨어 및 업데이트를 위한 인터넷 연결(선택)
 
 
- Step 2. 설치파일 다운로드
-Link : https://releases.ubuntu.com/bionic/
-"Desktop image" >  "64-bit PC (AMD64) desktop image" 클릭.
-“ubuntu-18.04.4-desktop-amd64.iso" 다운로드 합니다
+## Step 2. 설치파일 다운로드
+Link : https://releases.ubuntu.com/bionic/  
+**"Desktop image" >  "64-bit PC (AMD64) desktop image"** 클릭.  
+“ubuntu-18.04.4-desktop-amd64.iso" 다운로드 합니다.  
 
 
   Step 3. OS설치 미디어 준비 및 제작 - (USB stick)
