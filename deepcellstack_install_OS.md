@@ -10,19 +10,19 @@ Starcell, all right reserved
 
  
 # Ubuntu 18.04 LTS - Bionic Beaver
-18.04 LTS는 여러 기능이 개선되었고, 새로 출시되었습니다. 
-릴리스 코드이름은 "Bionic Beaver" 입니다.
+18.04 LTS는 여러 기능이 개선되었고, 새로 출시되었습니다.  
+릴리스 코드이름은 **"Bionic Beaver"** 입니다.  
 
-- 강화된 보안
-- GNOME 3.28 채택
-- 다양한 아이콘 및 컬러 이모티콘 지원
-- 새로운 Linux Kernel Version 4.15 적용
-- 2023년까지 Ubuntu 18.04 LTS 지원 및 업데이트에 대한 신뢰성
-- "최소 설치" 옵션 추가
-- 향상된 부팅 속도
+* 강화된 보안
+* GNOME 3.28 채택
+* 다양한 아이콘 및 컬러 이모티콘 지원
+* 새로운 Linux Kernel Version 4.15 적용
+* 2023년까지 Ubuntu 18.04 LTS 지원 및 업데이트에 대한 신뢰성
+* "최소 설치" 옵션 추가
+* 향상된 부팅 속도
 
 
- Step 1. 설치 요구사양
+## Step 1. 설치 요구사양
 - 2 GHz 이상의 듀얼코어 프로세서
 - 2 GB 이상의 시스템 메모리
 - 25 GB 이상의 저장공간
