@@ -10,7 +10,7 @@ Starcell, all right reserved
 
  
 # Ubuntu 18.04 LTS - Bionic Beaver
-18.04 LTS는 여러 기능이 개선되었고, 새로 출시되었습니다.  
+18.04 LTS는 여러 기능이 개선되었고, 새로 출시되었습니다.
 릴리스 코드이름은 "Bionic Beaver" 입니다.
 
 - 강화된 보안
