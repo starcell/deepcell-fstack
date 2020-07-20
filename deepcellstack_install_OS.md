@@ -33,7 +33,7 @@ Starcell, all right reserved
 ## Step 2. 설치파일 다운로드
 Link : https://releases.ubuntu.com/bionic/  
 **"Desktop image" >  "64-bit PC (AMD64) desktop image"** 클릭.  
-“ubuntu-18.04.4-desktop-amd64.iso" 다운로드 합니다.  
+**“ubuntu-18.04.4-desktop-amd64.iso"** 다운로드 합니다.  
 
 
 ## Step 3. OS설치 미디어 준비 및 제작 - (USB stick)
@@ -49,17 +49,17 @@ https://rufus.ie
 * 설치할 서버 혹은 PC의 부팅순서를 "USB BOOT" 모드를 첫번째로 변경합니다.
 
 
-Step 4. Ubuntu 18.04 LTS 설치
-Ubuntu 18.04 설치용 USB 메모리로 부팅에 성공하면
+## Step 4. Ubuntu 18.04 LTS 설치
+Ubuntu 18.04 설치용 USB 메모리로 부팅에 성공하면  
 다음과 같은 과정으로 설치를 진행합니다.
 
 
-1)	설치모드 선택
-"Install Ubuntu" 선택합니다.
--  Try Ubuntu without installing
-- Install Ubuntu
-- OEM install (for manufacturers)
-- Check disc for defects
+### 1)	설치모드 선택
+*"Install Ubuntu"* 선택합니다.
+*  Try Ubuntu without installing
+* Install Ubuntu
+* OEM install (for manufacturers)
+* Check disc for defects
 
 
 2)	언어  "한국어"  선택
