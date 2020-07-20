@@ -1,13 +1,13 @@
+```
+㈜스타셀
 
-*㈜스타셀*
+Deepcell
 
-*Deepcell*
+Deepcellstack install - Ubuntu 18.04 desktop
 
-*Deepcellstack install - Ubuntu 18.04 desktop*
-
-*Starcell, all right reserved*
-*2020- 07- 15*
-
+Starcell, all right reserved
+2020- 07- 15
+```
 
  
 # Ubuntu 18.04 LTS - Bionic Beaver
