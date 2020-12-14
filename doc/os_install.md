@@ -79,7 +79,7 @@ Ubuntu 18.04 설치용 USB 메모리로 부팅에 성공하면
 
 7)	사용자 생성
 -  이름 : deepcell
-- 컴퓨터 이름 : deepcellstack
+- 컴퓨터 이름 : deepcell
 - 사용자 이름 : deepcell
 - 암호선택 / 암호확인
 - “로그인할때 암호입력” 선택
