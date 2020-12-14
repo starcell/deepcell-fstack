@@ -73,8 +73,18 @@ sudo docker --version
 2020/12/14 최신 버전 :  Docker version 20.10.0, build 7287ab3
 
 ### 도커 컨테이너 이미지 풀
-docker pull continuumio/miniconda3
-docker run -i -t continuumio/miniconda3 /bin/bash
+```bash
+sudo docker pull continuumio/miniconda3:4.7.12
+```
+
+### 도커 실행
+```bash
+sudo docker run -i -t continuumio/miniconda3:4.7.12 /bin/bash
+```
+or 포트 매핑을 할 경우
+```bash
+sudo docker run -i -t -p 8888:8888 continuumio/miniconda3:4.7.12 bash
+```
 
 
 ### 딥셀스텍 설치 파일 다운로드
