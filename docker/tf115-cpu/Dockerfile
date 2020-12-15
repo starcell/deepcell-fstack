@@ -41,6 +41,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         pandas \
         matplotlib \
         seaborn \
+        graphviz \
         pydot \
         jupyter \
         jupyterlab \
@@ -53,6 +54,15 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     ldconfig && \
     apt-get clean && \
     apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* /tmp/* ~/*
+    rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
+    mkdir /home/appuser 
+
+# ==================================================================
+# docker run user
+# ------------------------------------------------------------------
+
+RUN groupadd -g 1000 appuser
+RUN useradd -r -u 1000 -g appuser appuser
+USER appuser
 
 EXPOSE 8888 6006
