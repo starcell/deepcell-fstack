@@ -15,17 +15,20 @@
 # ==================================================================
 
 FROM continuumio/miniconda3:4.7.12
+
+LABEL MAINTAINER="Starcell, Inc"
+
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     CONDA_INSTALL="conda install" && \
 
     apt-get update && \
+    conda update --all && \
 
 # ==================================================================
 # fonts
 # ------------------------------------------------------------------
 
     $APT_INSTALL \
-        apt-utils \
         fonts-dejavu-core && \
 
 # ==================================================================
