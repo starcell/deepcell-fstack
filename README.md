@@ -1,6 +1,6 @@
 # deepcell-fstack
 
-deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행할 수 있도록 준비된 도커 이미지 모음입니다. deepcel fstack을 이용하면 다음과 같은 이점이 있습니다.
+deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행할 수 있도록 준비된 도커 컨테이너 이미지 모음입니다. deepcel fstack을 이용하면 다음과 같은 이점이 있습니다.
 - 딥러닝을 위한 환경을 신속하게 준비할 수 있습니다.
 - 쉽게 도커 컨테이너를 활용할 수 있습니다.
 - CPU(Intel CPU 최적화 지원)만을 사용하는 환경과 GPU 가속 환경을 모두 사용할 수 있습니다.
@@ -14,8 +14,8 @@ deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행�
   - [CPU 전용 환경](#CPU)
     - [설치](#Installation-cpu)
     - [사용법](#Usage-cpu)
-- [태그]](#Tags)
-  - [현재 제공되는 태그](#Available-tags)
+- [컨테이너 이미지]](#Images)
+  - [현재 제공되는 이미지들](#Available-images)
 - [Citation](#Citation)
 - [Contributing](#Contributing)
 - [Licensing](#Licensing)
@@ -25,7 +25,16 @@ deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행�
 <a name="start"/>
 
 # 시작하기
-## 사전 준비
+
+<a name="CPU"/>
+
+## CPU 전용 환경
+
+## 설치
+
+<a name="Installation-cpu"/>
+
+### 사전 준비
 Intel CPU가 장착된 컴퓨터 : 메모리 16GB이상 권장, SSD 권장  
 OS 설치 : [OS 설치 문서](doc/os_install.md)를 보고 Ubuntu 18.04 LTS Desktop을 설치  
 참고URL :
@@ -38,9 +47,9 @@ OS update
 - sudo apt update  
    
 ---
-## CPU 전용 환경
-## 사용자 계정
-### UID 1000, GUI 1000   
+
+### 사용자 계정
+#### UID 1000, GUI 1000   
 ubuntu os를 설치할 때 만든 사용자의 UID와 GID는 모두 1000이다. 아래와 같이 id 명령으로 확인할 수 있다.
 ```bash
 id
@@ -48,7 +57,6 @@ id
 이 문서에서는 사용자 계정과 그룹을 deepcell로 만들어서 사용하며 이 deepcell 계정의 UID와 GUI는 1000이다.
 fstack의 컨테이너 이미지들은 UID 1000으로 실행되도록 빌드되어 있으므로 사용자 UID 1000인 계정으로 실행하여야 한다.
 
-## 설치
 ### 도커 설치
 ```bash
 sudo apt-get install \
@@ -117,3 +125,16 @@ docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fst
 URL : <host IP>:8888   
 
 jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebook에 마운트 되어 있으므로 ~/notebook에 필요한 파일들을 만들거나 복사하여 사용할 수 있다.(사용자 권한 확인)
+
+
+<a name="Images"/>
+
+## 지원되는 컨테이너 이미지들
+
+
+<a name="Available-images"/>
+
+### 현재 지원되는 컨테이너 이미지들
+.                                             | CPU-only / Python 3.6                    | GPU / Python 3.6
+:-------------------------------------------: | :--------------------------------------: | :-------------------------------:
+ [TensorFlow](http://www.tensorflow.org)      | `fstack-tf115-cpu`                       | `fstack-tf115-gpu`
