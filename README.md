@@ -39,6 +39,15 @@ OS update
    
 ---
 ## CPU 전용 환경
+## 사용자 계정
+### UID 1000, GUI 1000   
+ubuntu os를 설치할 때 만든 사용자의 UID와 GID는 모두 1000이다. 아래와 같이 id 명령으로 확인할 수 있다.
+```bash
+id
+```
+이 문서에서는 사용자 계정과 그룹을 deepcell로 만들어서 사용하며 이 deepcell 계정의 UID와 GUI는 1000이다.
+fstack의 컨테이너 이미지들은 UID 1000으로 실행되도록 빌드되어 있으므로 사용자 UID 1000인 계정으로 실행하여야 한다.
+
 ## 설치
 ### 도커 설치
 ```bash
@@ -72,36 +81,39 @@ sudo docker --version
 ```
 2020/12/14 최신 버전 :  Docker version 20.10.0, build 7287ab3
 
+### 도커 사용자 권한 설정
+일반 사용자 계정(현재 사용중인 계정, UID는 1000)으로 docker 실행  
+계정을 docker group에 추가   
+```bash
+sudo usermod -a -G docker $USER
+sudo service docker restart
+```
+
+*** 이미 root로 docker를 실행한 후이면 root가 생성한 디렉토리와 파일에 접근권한이 없어서 오류가 발생한다.
+*** 이 때는 오류가 나는 파일과 디렉토리의 소유를 변경한다.
+
+
 ### 도커 컨테이너 이미지 풀
 ```bash
-sudo docker pull continuumio/miniconda3:4.7.12
+docker pull starcell/fstack-tf115-cpu
 ```
 
 ### 도커 실행
+jupyter notebook을 파일을 컨테이너와 호스트에서 공동으로 접근할 수 있도록 아래와 같이 디렉토리를 만들고 볼륨 마운트하여 사용한다.
 ```bash
-sudo docker run -i -t continuumio/miniconda3:4.7.12 /bin/bash
+mkdir ~/notebook
 ```
-or 포트 매핑을 할 경우
+jupyter notebook을 사용하기 위한 명령을 아래와 같이 실행한다.
 ```bash
-sudo docker run -i -t -p 8888:8888 continuumio/miniconda3:4.7.12 bash
+docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
+```
+또는 jupyter lab 사용하기 위한 명령을 아래와 같이 실행한다.
+```bash
+docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
 ```
 
+### jupyter noteboo(또는 jupyter lab) 사용
+웹브라우저(chrome 브라우저를 권장)를 열고 host의 IP와 port번호를 입력한다.(아래 URL참고)
+URL : <host IP>:8888   
 
-### 딥셀스텍 설치 파일 다운로드
-
-작업 디렉토리 준비
-  예) 
-  mkdir ~/deepcell
-  cd ~/deepcell
-
-다운로드
-  git clone https://github.com/starcell/deepcell-stack-cpu
-
-설치  
-  cd deepcell-stack-cpu  
-  ./install.sh cpu
-
-## 딥셀 컨테이너 사용
-
-딥셀 스텍 실행 
-  ./run_deepcell.sh
+jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebook에 마운트 되어 있으므로 ~/notebook에 필요한 파일들을 만들거나 복사하여 사용할 수 있다.(사용자 권한 확인)
