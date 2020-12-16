@@ -100,7 +100,7 @@ sudo service docker restart
 
 <a name="Usage-cpu"/>
 
-## 사용
+## 사용법
 ### 도커 컨테이너 이미지 내려받기(pull)
 ```bash
 docker pull starcell/fstack-tf115-cpu
@@ -130,11 +130,11 @@ jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebo
 
 <a name="Images"/>
 
-## 컨테이너 이미지
+# 컨테이너 이미지
 
 <a name="Available-images"/>
 
-### 현재 지원되는 컨테이너 이미지들
+## 현재 지원되는 컨테이너 이미지들
 .                                             | CPU-only / Python 3.6                    | GPU / Python 3.6
 :-------------------------------------------: | :--------------------------------------: | :-------------------------------:
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf115-cpu`                       | `fstack-tf115-gpu`
