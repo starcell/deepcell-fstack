@@ -30,10 +30,9 @@ deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행�
 
 ## CPU 전용 환경
 
-## 설치
-
 <a name="Installation-cpu"/>
 
+## 설치
 ### 사전 준비
 Intel CPU가 장착된 컴퓨터 : 메모리 16GB이상 권장, SSD 권장  
 OS 설치 : [OS 설치 문서](doc/os_install.md)를 보고 Ubuntu 18.04 LTS Desktop을 설치  
@@ -99,6 +98,7 @@ sudo service docker restart
 *** 이미 root로 docker를 실행한 후에는 root가 생성한 디렉토리와 파일에 접근권한이 없어서 오류가 발생한다.   
 *** 이 때는 오류가 나는 파일과 디렉토리의 소유를 변경한다.
 
+<a name="Usage-cpu"/>
 
 ### 도커 컨테이너 이미지 풀
 ```bash
@@ -124,6 +124,8 @@ docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fst
 - URL : <host IP>:8888   
 
 jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebook에 마운트 되어 있으므로 ~/notebook에 필요한 파일들을 만들거나 복사하여 사용할 수 있다.(사용자 권한 확인)
+   
+---
 
 <a name="Images"/>
 
