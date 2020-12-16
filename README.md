@@ -14,7 +14,7 @@ deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행�
   - [CPU 전용 환경](#CPU)
     - [설치](#Installation-cpu)
     - [사용법](#Usage-cpu)
-- [컨테이너 이미지]](#Images)
+- [컨테이너 이미지](#Images)
   - [현재 제공되는 이미지들](#Available-images)
 - [Citation](#Citation)
 - [Contributing](#Contributing)
@@ -126,11 +126,9 @@ URL : <host IP>:8888
 
 jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebook에 마운트 되어 있으므로 ~/notebook에 필요한 파일들을 만들거나 복사하여 사용할 수 있다.(사용자 권한 확인)
 
-
 <a name="Images"/>
 
-## 지원되는 컨테이너 이미지들
-
+## 컨테이너 이미지
 
 <a name="Available-images"/>
 
