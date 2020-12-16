@@ -49,12 +49,12 @@ OS update
 ---
 
 ### 사용자 계정
-#### UID 1000, GUI 1000   
+#### UID 1000, GID 1000   
 ubuntu os를 설치할 때 만든 사용자의 UID와 GID는 모두 1000이다. 아래와 같이 id 명령으로 확인할 수 있다.
 ```bash
 id
 ```
-이 문서에서는 사용자 계정과 그룹을 deepcell로 만들어서 사용하며 이 deepcell 계정의 UID와 GUI는 1000이다.
+이 문서에서는 사용자 계정과 그룹을 deepcell로 만들어서 사용하며 이 deepcell 계정의 UID와 GID는 1000이다.
 fstack의 컨테이너 이미지들은 UID 1000으로 실행되도록 빌드되어 있으므로 사용자 UID 1000인 계정으로 실행하여야 한다.
 
 ### 도커 설치
@@ -90,14 +90,13 @@ sudo docker --version
 - 2020/12/14 최신 버전 :  Docker version 20.10.0, build 7287ab3
 
 ### 도커 사용자 권한 설정
-일반 사용자 계정(현재 사용중인 계정, UID는 1000)으로 docker 실행  
-계정을 docker group에 추가   
+일반 사용자 계정(현재 사용중인 계정, UID는 1000)으로 docker를 실행하기 위해 아래 명령을 실행하여 사용자 계정을 docker group에 추가 한다.   
 ```bash
 sudo usermod -a -G docker $USER
 sudo service docker restart
 ```
 
-*** 이미 root로 docker를 실행한 후이면 root가 생성한 디렉토리와 파일에 접근권한이 없어서 오류가 발생한다.
+*** 이미 root로 docker를 실행한 후에는 root가 생성한 디렉토리와 파일에 접근권한이 없어서 오류가 발생한다.   
 *** 이 때는 오류가 나는 파일과 디렉토리의 소유를 변경한다.
 
 
