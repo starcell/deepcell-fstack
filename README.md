@@ -100,7 +100,8 @@ sudo service docker restart
 
 <a name="Usage-cpu"/>
 
-### 도커 컨테이너 이미지 풀
+## 사용
+### 도커 컨테이너 이미지 내려받기(pull)
 ```bash
 docker pull starcell/fstack-tf115-cpu
 ```
