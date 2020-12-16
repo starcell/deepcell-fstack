@@ -87,7 +87,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```bash
 sudo docker --version
 ```
-2020/12/14 최신 버전 :  Docker version 20.10.0, build 7287ab3
+- 2020/12/14 최신 버전 :  Docker version 20.10.0, build 7287ab3
 
 ### 도커 사용자 권한 설정
 일반 사용자 계정(현재 사용중인 계정, UID는 1000)으로 docker 실행  
@@ -115,14 +115,14 @@ jupyter notebook을 사용하기 위한 명령을 아래와 같이 실행한다.
 ```bash
 docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
 ```
-또는 jupyter lab 사용하기 위한 명령을 아래와 같이 실행한다.
+또는, jupyter lab 사용하기 위한 명령을 아래와 같이 실행한다.
 ```bash
 docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
 ```
 
-### jupyter noteboo(또는 jupyter lab) 사용
+### jupyter notebook(또는 jupyter lab) 사용
 웹브라우저(chrome 브라우저를 권장)를 열고 host의 IP와 port번호를 입력한다.(아래 URL참고)
-URL : <host IP>:8888   
+- URL : <host IP>:8888   
 
 jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebook에 마운트 되어 있으므로 ~/notebook에 필요한 파일들을 만들거나 복사하여 사용할 수 있다.(사용자 권한 확인)
 
