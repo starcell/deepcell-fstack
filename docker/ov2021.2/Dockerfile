@@ -14,10 +14,9 @@ LABEL MAINTAINER="Starcell, Inc"
 
 RUN apt-get update && \
     conda update --all && \
-    conda install openvino-ie4py-ubuntu18 -c intel \
-        jupyter \
-        jupyterlab \
-        && \
+    conda install openvino-ie4py-ubuntu18 -c intel && \
+    conda install jupyter && \
+    conda install jupyterlab && \
 
 # ==================================================================
 # config & cleanup
