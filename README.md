@@ -113,11 +113,11 @@ mkdir ~/notebook
 ```
 jupyter notebook을 사용하기 위한 명령을 아래와 같이 실행한다.
 ```bash
-docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 ```
 또는, jupyter lab 사용하기 위한 명령을 아래와 같이 실행한다.
 ```bash
-docker run --user 1000 -it -v ~/notebook:/home/appuser -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/home/appuser'
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 ```
 
 ### jupyter notebook(또는 jupyter lab) 사용
@@ -135,6 +135,7 @@ jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebo
 <a name="Available-images"/>
 
 ## 현재 지원되는 컨테이너 이미지들
-.                                             | CPU-only / Python 3.6                    | GPU / Python 3.6
+.                                             | CPU-only / Python 3.x                    | GPU / Python 3.x
 :-------------------------------------------: | :--------------------------------------: | :-------------------------------:
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf115-cpu`                       | `fstack-tf115-gpu`
+ [TensorFlow](http://www.tensorflow.org)      | `fstack-tf23-cpu`                        | `fstack-tf23-gpu`
