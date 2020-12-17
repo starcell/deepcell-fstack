@@ -55,14 +55,17 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
-    mkdir /home/appuser 
+    mkdir /home/appuser && \
+    mkdir /notebook 
 
 # ==================================================================
 # docker run user
 # ------------------------------------------------------------------
 
-RUN groupadd -g 1000 appuser
-RUN useradd -r -u 1000 -g appuser appuser
+RUN groupadd -g 1000 appuser && \
+    useradd -r -u 1000 -g appuser appuser && \
+    chown -R 1000:1000 /home/appuser
+    
 USER appuser
 
 EXPOSE 8888 6006
