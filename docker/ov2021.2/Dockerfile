@@ -3,29 +3,18 @@
 # ------------------------------------------------------------------
 # miniconda     latest
 # python        3.8.5   (default in conda)
+# openvino      2021.2  (conda)
 # jupyter       latest  (conda)
 # jupyterlab    latest  (conda)
 # ==================================================================
 
-FROM openvino/ubuntu18_runtime:2021.2
+FROM continuumio/miniconda3:4.9.2
 
 LABEL MAINTAINER="Starcell, Inc"
 
-RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    CONDA_INSTALL="conda install" && \
-
-    apt-get update && \
-
-    $APT_INSTALL \
-        miniconda && \
-
-# ==================================================================
-# conda install
-# ------------------------------------------------------------------
-
+RUN apt-get update && \
     conda update --all && \
-
-    $CONDA_INSTALL \
+    conda install openvino-ie4py-ubuntu18 -c intel \
         jupyter \
         jupyterlab \
         && \
@@ -33,10 +22,19 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ==================================================================
 # config & cleanup
 # ------------------------------------------------------------------
-
     ldconfig && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
+    mkdir /home/appuser 
+
+# ==================================================================
+# docker run user
+# ------------------------------------------------------------------
+RUN groupadd -g 1000 appuser && \
+    useradd -r -u 1000 -g appuser appuser && \
+    chown -R 1000:1000 /home/appuser
+
+USER appuser
 
 EXPOSE 8888
