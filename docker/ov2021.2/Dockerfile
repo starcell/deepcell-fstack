@@ -2,13 +2,13 @@
 # 설치 내역
 # ------------------------------------------------------------------
 # miniconda     latest
-# python        3.8.5   (default in conda)
+# python        3.7.4   (default in conda)
 # openvino      2021.2  (conda)
 # jupyter       latest  (conda)
 # jupyterlab    latest  (conda)
 # ==================================================================
 
-FROM continuumio/miniconda3:4.9.2
+FROM continuumio/miniconda3:4.7.12
 
 LABEL MAINTAINER="Starcell, Inc"
 
