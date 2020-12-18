@@ -111,13 +111,31 @@ jupyter notebook을 파일을 컨테이너와 호스트에서 공동으로 접�
 ```bash
 mkdir ~/notebook
 ```
-jupyter notebook을 사용하기 위한 명령을 아래와 같이 실행한다.
+jupyter notebook을 사용하기 위해 아래 명령 들 중 하나를 참고하여 실행한다.
 ```bash
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-ov2021.2 jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-gpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-gpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
+
+
 ```
-또는, jupyter lab 사용하기 위한 명령을 아래와 같이 실행한다.
+또는, jupyter lab 사용하기 위해 아래 명령 들 중 하나를 참고하여 실행한다.
 ```bash
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-ov2021.2 jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-gpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-gpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
 ```
 
 ### jupyter notebook(또는 jupyter lab) 사용
@@ -139,3 +157,4 @@ jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebo
 :-------------------------------------------: | :--------------------------------------: | :-------------------------------:
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf115-cpu`                       | `fstack-tf115-gpu`
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf23-cpu`                        | `fstack-tf23-gpu`
+ [OpenVINO](https://docs.openvinotoolkit.org/)| `fstack-ov2021.2`                        | 
