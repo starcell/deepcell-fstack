@@ -2,9 +2,9 @@
 # 설치 내역
 # ------------------------------------------------------------------
 # miniconda     latest
-# python        3.7.4   (default in conda)
+# python        3.7.9   (conda update)
 # openvino      2021.2  (conda)
-# jupyter       latest  (conda)
+# jupyter       latest  (6.1.5, conda)
 # jupyterlab    latest  (conda)
 # ==================================================================
 
