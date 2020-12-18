@@ -41,12 +41,9 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # conda install
 # ------------------------------------------------------------------
 
-    $pip_INSTALL \
+    $PIP_INSTALL \
         pandas \
-        matplotlib \
         seaborn \
-        graphviz \
-        pydot \
         jupyterlab \
         && \
 
