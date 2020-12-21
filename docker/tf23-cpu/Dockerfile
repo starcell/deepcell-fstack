@@ -39,6 +39,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     $CONDA_INSTALL \
         tensorflow==2.3 \
         pandas \
+        scikit-learn \
         matplotlib \
         seaborn \
         graphviz \

@@ -39,6 +39,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         tensorflow==1.15 \
         keras \
         pandas \
+        scikit-learn \
         matplotlib \
         seaborn \
         graphviz \

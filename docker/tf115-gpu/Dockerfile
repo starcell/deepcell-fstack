@@ -38,11 +38,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         graphviz \
         python3-pydot && \
 # ==================================================================
-# conda install
+# pip install
 # ------------------------------------------------------------------
 
     $PIP_INSTALL \
         pandas \
+        scikit-learn \
         seaborn \
         jupyterlab \
         && \
