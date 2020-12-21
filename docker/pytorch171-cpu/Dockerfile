@@ -46,6 +46,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 
     $CONDA_INSTALL \
         pandas \
+        scikit-learn \
         matplotlib \
         seaborn \
         graphviz \
