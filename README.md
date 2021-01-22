@@ -142,6 +142,12 @@ docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-gpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
 ```
 
+### root 권한으로 접속하는 방법
+docker option에 -u 0를 추가: 아래 예 참고
+```
+docker run --user 1000 -itu 0 -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-gpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/tf'
+```
+
 ### jupyter notebook(또는 jupyter lab) 사용
 웹브라우저(chrome 브라우저를 권장)를 열고 host의 IP와 port번호를 입력한다.(아래 URL참고)
 - URL : <host IP>:8888   

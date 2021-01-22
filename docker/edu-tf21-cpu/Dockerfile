@@ -21,6 +21,7 @@ LABEL MAINTAINER="Starcell, Inc"
 
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     CONDA_INSTALL="conda install" && \
+    PIP_INSTALL="pip install" && \
 
     apt-get update && \
     conda update --all && \
@@ -30,6 +31,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $APT_INSTALL \
+        libgl1-mesa-glx \
         fonts-dejavu-core && \
 
 # ==================================================================
@@ -49,6 +51,15 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         && \
 
 # ==================================================================
+# pip install
+# ------------------------------------------------------------------
+
+    $PIP_INSTALL \
+        opencv-python \
+        pygame \
+        && \
+
+# ==================================================================
 # config & cleanup
 # ------------------------------------------------------------------
 
@@ -62,6 +73,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ==================================================================
 # docker run user
 # ------------------------------------------------------------------
+
 RUN groupadd -g 1000 appuser && \
     useradd -r -u 1000 -g appuser appuser && \
     chown -R 1000:1000 /home/appuser
