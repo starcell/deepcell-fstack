@@ -115,6 +115,8 @@ jupyter notebook을 사용하기 위해 아래 명령 들 중 하나를 참고�
 ```bash
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf21-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-cpu jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-ov2021.2 jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
@@ -128,6 +130,8 @@ docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-
 또는, jupyter lab 사용하기 위해 아래 명령 들 중 하나를 참고하여 실행한다.
 ```bash
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf115-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+
+docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf21-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
 docker run --user 1000 -it -v ~/notebook:/notebook -p 8888:8888 starcell/fstack-tf23-cpu jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
