@@ -15,7 +15,7 @@
 # jupyterlab    latest  (conda)
 # ==================================================================
 
-FROM continuumio/miniconda3:4.9.2
+FROM continuumio/miniconda3:4.7.2
 
 LABEL MAINTAINER="Starcell, Inc"
 
