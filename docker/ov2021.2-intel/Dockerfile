@@ -6,36 +6,30 @@
 # jupyter         latest  (pip)
 # jupyterlab      latest  (pip)
 # ==================================================================
+###
+# base image에서 user가 openvino임
+###
 
 FROM openvino/ubuntu18_dev:2021.2
 
 LABEL MAINTAINER="Starcell, Inc"
 
-RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    PIP_INSTALL="pip install" && \
-
-    apt-get update && \
-    pip install --upgrade pip && \
+USER root
 
 # ==================================================================
 # pip install
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL \
-        jupyter \
-        jupyterlab \
-        && \
+RUN source /opt/intel/venv_tf2/bin/activate && pip install --upgrade pip
 
-# ==================================================================
-# config & cleanup
-# ------------------------------------------------------------------
-    ldconfig && \
-    apt-get clean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
+RUN source /opt/intel/venv_tf2/bin/activate && pip install \
+        jupyter \
+        jupyterlab
 
 # ==================================================================
 # docker run user (default) : openvino
 # ------------------------------------------------------------------
+
+USER openvino
 
 EXPOSE 8888
