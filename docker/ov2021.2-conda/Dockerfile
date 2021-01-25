@@ -19,28 +19,12 @@ FROM continuumio/miniconda3:4.7.12
 
 LABEL MAINTAINER="Starcell, Inc"
 
-RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    CONDA_INSTALL="conda install" && \
-
-    apt-get update && \
+RUN apt-get update && \
     conda update --all && \
-
-# ==================================================================
-# conda install
-# ------------------------------------------------------------------
-
-    $CONDA_INSTALL \
-        jupyter \
-        jupyterlab \
-        && \
-
-    $CONDA_INSTALL \
-        -c intel openvino-ie4py-ubuntu18 \
-        && \
-
-    $CONDA_INSTALL \
-        -c brianliu3650 openvino-mo4tf \
-        && \
+    conda install jupyter && \
+    conda install jupyterlab && \
+    conda install openvino-mo4tf -c brianliu3650 && \
+    conda install openvino-ie4py-ubuntu18 -c intel && \
 
 # ==================================================================
 # config & cleanup
