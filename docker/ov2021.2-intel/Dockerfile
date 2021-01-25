@@ -44,6 +44,6 @@ RUN ldconfig && \
 
 USER openvino
 
-CMD source /opt/intel/venv_tf2/bin/activate && jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+# CMD source /opt/intel/venv_tf2/bin/activate && jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
 EXPOSE 8888
