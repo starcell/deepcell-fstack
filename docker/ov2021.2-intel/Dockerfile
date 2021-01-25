@@ -16,6 +16,8 @@ LABEL MAINTAINER="Starcell, Inc"
 
 USER root
 
+RUN apt-get update
+
 # ==================================================================
 # pip install
 # ------------------------------------------------------------------
@@ -27,9 +29,21 @@ RUN source /opt/intel/venv_tf2/bin/activate && pip install \
         jupyterlab
 
 # ==================================================================
+# config & cleanup
+# ------------------------------------------------------------------
+
+RUN ldconfig && \
+    apt-get clean && \
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
+    mkdir /notebook 
+
+# ==================================================================
 # docker run user (default) : openvino
 # ------------------------------------------------------------------
 
 USER openvino
+
+CMD source /opt/intel/venv_tf2/bin/activate && jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
 
 EXPOSE 8888
