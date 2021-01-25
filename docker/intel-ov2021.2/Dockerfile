@@ -1,22 +1,30 @@
 # ==================================================================
 # 설치 내역
 # ------------------------------------------------------------------
-# miniconda     latest
-# python        3.7.9   (conda update)
-# openvino      2021.2  (conda)
-# jupyter       latest  (6.1.5, conda)
-# jupyterlab    latest  (conda)
+# python          3.6.9   (python.org : base container)
+# openvino        2021.2  (base container)
+# jupyter         latest  (pip)
+# jupyterlab      latest  (pip)
 # ==================================================================
 
-FROM continuumio/miniconda3:4.7.12
+FROM openvino/ubuntu18_dev:2021.2
 
 LABEL MAINTAINER="Starcell, Inc"
 
-RUN apt-get update && \
-    conda update --all && \
-    conda install openvino-ie4py-ubuntu18 -c intel && \
-    conda install jupyter && \
-    conda install jupyterlab && \
+RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
+    PIP_INSTALL="pip install" && \
+
+    apt-get update && \
+    pip install --upgrade pip && \
+
+# ==================================================================
+# pip install
+# ------------------------------------------------------------------
+
+    $PIP_INSTALL \
+        jupyter \
+        jupyterlab \
+        && \
 
 # ==================================================================
 # config & cleanup
@@ -25,15 +33,9 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/* && \
-    mkdir /home/appuser 
 
 # ==================================================================
-# docker run user
+# docker run user (default) : openvino
 # ------------------------------------------------------------------
-RUN groupadd -g 1000 appuser && \
-    useradd -r -u 1000 -g appuser appuser && \
-    chown -R 1000:1000 /home/appuser
-
-USER appuser
 
 EXPOSE 8888
