@@ -4,8 +4,9 @@
 # ubuntu 18.04
 # python        3.7.7   (default in conda)
 # ------------------------------------------------------------------
+# libgl1-mesa-glx       (apt)
 # fonts         fonts-dejavu-core
-# tensorflow    2.1     (conda)
+# tensorflow    1.15    (conda)
 # pandas        latest  (conda)
 # matplotlib    latest  (conda)
 # seaborn       latest  (conda)
@@ -13,6 +14,8 @@
 # pydot         latest  (conda)
 # jupyter       latest  (6.1.5, conda)
 # jupyterlab    latest  (conda)
+# opencv-python latest  (pip)
+# pygame        latest  (pip)
 # ==================================================================
 
 FROM continuumio/miniconda3:4.7.12
@@ -31,6 +34,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $APT_INSTALL \
+        libgl1-mesa-glx \
         fonts-dejavu-core && \
 
 # ==================================================================
@@ -38,7 +42,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $CONDA_INSTALL \
-        tensorflow==2.1 \
+        tensorflow==1.15 \
         pandas \
         scikit-learn \
         matplotlib \
@@ -52,6 +56,11 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ==================================================================
 # pip install
 # ------------------------------------------------------------------
+
+    $PIP_INSTALL \
+        opencv-python \
+        pygame \
+        && \
 
 # ==================================================================
 # config & cleanup
