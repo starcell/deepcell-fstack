@@ -50,6 +50,15 @@ RUN ldconfig && \
 
 USER openvino
 
-# CMD source /opt/intel/venv_tf2/bin/activate && jupyter lab --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/notebook'
+ENV SHELL /bin/bash
+
+RUN printf "#! /bin/bash \n" > ${HOME}/start_jupyter.sh; \
+    printf "source ${INTEL_OPENVINO_DIR}/bin/setupvars.sh \n" >> ${HOME}/start_jupyter.sh; \
+    printf "source ${VENV_TF2}/bin/activate \n" >> ${HOME}/start_jupyter.sh; \
+    printf "jupyter lab --no-browser --ip=0.0.0.0 --allow-root  --NotebookApp.token= --notebook-dir='/notebook' \n" >> ${HOME}/start_jupyter.sh; \
+    chmod 755 ${HOME}/start_jupyter.sh
 
 EXPOSE 8888
+
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["${HOME}/start_jupyter.sh"]
