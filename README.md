@@ -1,6 +1,6 @@
 # deepcell-fstack
 
-deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행할 수 있도록 준비된 도커 컨테이너 이미지 모음입니다. deepcel fstack을 이용하면 다음과 같은 이점이 있습니다.
+deepcell fstack은 AI에 필요한 소프트웨어들을 컨테이너로 실행할 수 있도록 준비된 도커 컨테이너 이미지 모음입니다. deepcell fstack을 이용하면 다음과 같은 이점이 있습니다.
 - 딥러닝을 위한 환경을 신속하게 준비할 수 있습니다.
 - 쉽게 도커 컨테이너를 활용할 수 있습니다.
 - CPU(Intel CPU 최적화 지원)만을 사용하는 환경과 GPU 가속 환경을 모두 사용할 수 있습니다.
@@ -167,4 +167,5 @@ jupyter notebook에서 사용하는 기본 디렉토리는 호스트의 ~/notebo
 :-------------------------------------------: | :--------------------------------------: | :-------------------------------:
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf115-cpu`                       | `fstack-tf115-gpu`
  [TensorFlow](http://www.tensorflow.org)      | `fstack-tf23-cpu`                        | `fstack-tf23-gpu`
+ [PyTorch](http://www.pytorch.org)            | `fstack-pytorch171-cpu`                  | `fstack-pytorch170-gpu`
  [OpenVINO](https://docs.openvinotoolkit.org/)| `fstack-ov2021.2`                        | 
